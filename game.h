@@ -15,8 +15,8 @@ public:
   static const int winvalue=2048;
 
 private:
-  Board board;
-  bool gameisover;
+  Board *board;
+  bool youwin,gameisover;
 
 
 

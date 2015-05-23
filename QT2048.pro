@@ -15,10 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         qt2048.cpp \
     board.cpp \
-    game.cpp
+    game.cpp \
+    playing.cpp
 
 HEADERS  += qt2048.h \
     board.h \
-    game.h
+    game.h \
+    playing.h
 
-FORMS    += qt2048.ui
+FORMS    += qt2048.ui \
+    playing.ui
+
+RESOURCES += \
+    2048picture.qrc

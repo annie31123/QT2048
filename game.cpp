@@ -7,35 +7,36 @@ Game::Game(){
 }
 
 void Game::restart(){
-  board.score=0;
+  board->score=0;
+  youwin=false;
   gameisover=false;
 }
 
 
 void Game::move(Direction direction){
-  board.move(direction);
-  board.makerand2();
+  board->move(direction);
+  board->makerand2();
 
-  for(int i=0;i<board.getsize();i++)
-    for(int j=0;j<board.getsize();j++)
-      if(board.getarrayvalue(i,j)==winvalue){
+  for(int i=0;i<board->getsize();i++)
+    for(int j=0;j<board->getsize();j++)
+      if(board->getarrayvalue(i,j)==winvalue){
         win();
         return;
       }
 
 
 
-  if (board.nospace==true)
+  if (board->nospace==true)
     gameover();
 
 }
 
 int Game::getscore(){
-  return board.score;
+  return board->score;
 }
 
 void Game::win(){
-cout << "you win"<<endl;
+    youwin=true;
 
 }
 

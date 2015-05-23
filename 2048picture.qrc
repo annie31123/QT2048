@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>2048title.PNG</file>
+        <file>2048board.PNG</file>
+    </qresource>
+</RCC>
