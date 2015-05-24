@@ -11,24 +11,17 @@ void Board::move(Direction direction){
   switch (direction){
 
     case UP:
-      for(int i=0;i<size;i++)
-        for(int j=0;j<size;j++)
-          moveup(i,j);
-
+          moveup();
+      break;
     case DOWN:
-      for(int i=0;i<size;i++)
-        for(int j=0;j<size;j++)
-          movedown(i,j);
-
+          movedown();
+      break;
     case LEFT:
-      for(int i=0;i<size;i++)
-        for(int j=0;j<size;j++)
-          moveleft(i,j);
-
+          moveleft();
+        break;
     case RIGHT:
-      for(int i=0;i<size;i++)
-        for(int j=0;j<size;j++)
-          moveright(i,j);
+          moveright();
+      break;
   }
 
 
@@ -36,74 +29,127 @@ void Board::move(Direction direction){
 
 
 
-void Board::moveup(int i,int j){
-    if (i==0)
-      return;
+void Board::moveup(){
+    for(int j=0;j<size;j++ ){
+      for(int i=1;i<size;i++){
+        if(boardarray[i-1][j]==0){
+            boardarray[i-1][j]=boardarray[i][j];
+            boardarray[i][j]=0;
+         }
 
-     if(boardarray[i-1][j]==0){
-      boardarray[i-1][j]=boardarray[i][j];
-      boardarray[i][j]=0;
-     }
+      }}
 
-     if(boardarray[i][j]==boardarray[i-1][j]){
-      boardarray[i-1][j]=boardarray[i][j]*2;
-      boardarray[i][j]=0;
-      countscore(boardarray[i-1][j]);
-     }
+    for(int j=0;j<size;j++ ){
+      for(int i=1;i<size;i++){
+        if(boardarray[i][j]==boardarray[i-1][j]){
+            boardarray[i-1][j]=boardarray[i][j]*2;
+            boardarray[i][j]=0;
+            countscore(boardarray[i-1][j]);
+        }
+      }}
 
-    return;
-}
+    for(int j=0;j<size;j++ ){
+      for(int i=1;i<size;i++){
+        if(boardarray[i-1][j]==0){
+            boardarray[i-1][j]=boardarray[i][j];
+            boardarray[i][j]=0;
+         }
 
-void Board::movedown(int i,int j){
-    if (i==size-1)
-      return;
+      }}
 
-     if(boardarray[i+1][j]==0){
-      boardarray[i+1][j]=boardarray[i][j];
-      boardarray[i][j]=0;
-     }
 
-     if(boardarray[i][j]==boardarray[i+1][j]){
-      boardarray[i+1][j]=boardarray[i][j]*2;
-      boardarray[i][j]=0;
-      countscore(boardarray[i+1][j]);
-     }
 
     return;
 }
 
-void Board::moveleft(int i,int j){
-    if (j==0)
-      return;
 
-     if(boardarray[i][j-1]==0){
-      boardarray[i][j-1]=boardarray[i][j];
-      boardarray[i][j]=0;
-     }
+void Board::movedown(){
 
-     if(boardarray[i][j-1]==boardarray[i][j]){
-      boardarray[i][j-1]=boardarray[i][j]*2;
-      boardarray[i][j]=0;
-      countscore(boardarray[i][j-1]);
-     }
+    for(int j=0;j<size;j++ ){
+      for(int i=size-2;i>-1;i++){
+        if(boardarray[i+1][j]==0){
+            boardarray[i+1][j]=boardarray[i][j];
+            boardarray[i][j]=0;
+        }
+     }}
+
+    for(int j=0;j<size;j++ ){
+      for(int i=size-2;i>-1;i++){
+        if(boardarray[i][j]==boardarray[i+1][j]){
+            boardarray[i+1][j]=boardarray[i][j]*2;
+            boardarray[i][j]=0;
+            countscore(boardarray[i+1][j]);
+        }
+     }}
+
+    for(int j=0;j<size;j++ ){
+      for(int i=size-2;i>-1;i++){
+        if(boardarray[i+1][j]==0){
+            boardarray[i+1][j]=boardarray[i][j];
+            boardarray[i][j]=0;
+        }
+     }}
 
     return;
 }
 
-void Board::moveright(int i,int j){
-    if (j==size-1)
-      return;
+void Board::moveleft(){
 
-     if(boardarray[i][j+1]==0){
-      boardarray[i][j+1]=boardarray[i][j];
-      boardarray[i][j]=0;
-     }
+    for(int i=0;i<size;i++){
+      for(int j=1;j<size;j++){
+        if(boardarray[i][j-1]==0){
+            boardarray[i][j-1]=boardarray[i][j];
+            boardarray[i][j]=0;
+        }
+    }}
 
-     if(boardarray[i][j+1]==boardarray[i][j]){
-      boardarray[i][j+1]=boardarray[i][j]*2;
-      boardarray[i][j]=0;
-      countscore(boardarray[i][j+1]);
-     }
+
+    for(int i=0;i<size;i++){
+      for(int j=1;j<size;j++){
+        if(boardarray[i][j-1]==boardarray[i][j]){
+            boardarray[i][j-1]=boardarray[i][j]*2;
+            boardarray[i][j]=0;
+            countscore(boardarray[i][j-1]);
+        }
+    }}
+
+    for(int i=0;i<size;i++){
+      for(int j=1;j<size;j++){
+        if(boardarray[i][j-1]==0){
+            boardarray[i][j-1]=boardarray[i][j];
+            boardarray[i][j]=0;
+        }
+    }}
+
+    return;
+}
+
+void Board::moveright(){
+
+    for(int i=0;i<size;i++){
+      for(int j=size-2;j>-1;j++){
+        if(boardarray[i][j+1]==0){
+            boardarray[i][j+1]=boardarray[i][j];
+            boardarray[i][j]=0;
+        }
+    }}
+
+    for(int i=0;i<size;i++){
+      for(int j=size-2;j>-1;j++){
+        if(boardarray[i][j+1]==boardarray[i][j]){
+            boardarray[i][j+1]=boardarray[i][j]*2;
+            boardarray[i][j]=0;
+            countscore(boardarray[i][j+1]);
+         }
+    }}
+
+    for(int i=0;i<size;i++){
+      for(int j=size-2;j>-1;j++){
+        if(boardarray[i][j+1]==0){
+            boardarray[i][j+1]=boardarray[i][j];
+            boardarray[i][j]=0;
+        }
+    }}
 
     return;
 }

@@ -21,10 +21,10 @@ public:
 private:
 
   void countscore(int getpoints);
-  void moveup(int i,int j);
-  void movedown(int i,int j);
-  void moveleft(int i,int j);
-  void moveright(int i,int j);
+  void moveup();
+  void movedown();
+  void moveleft();
+  void moveright();
 
   int boardarray[size][size];
   int *randarray[size*size];

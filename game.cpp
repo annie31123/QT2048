@@ -12,6 +12,14 @@ void Game::restart(){
   gameisover=false;
 }
 
+void Game::giverandtwo(){
+    board->makerand2();
+}
+
+int Game::getvalue(int i,int j){
+    return board->getarrayvalue(i,j);
+}
+
 
 void Game::move(Direction direction){
   board->move(direction);

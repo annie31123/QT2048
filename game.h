@@ -11,12 +11,15 @@ public:
   void win();
   void gameover();
   void restart();
+  void giverandtwo();
+  int getvalue(int i,int j);
   int getscore();
   static const int winvalue=2048;
+  bool youwin,gameisover;
 
 private:
   Board *board;
-  bool youwin,gameisover;
+
 
 
 

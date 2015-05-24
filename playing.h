@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include "game.h"
 #include "board.h"
+#include <QLabel>
 
 namespace Ui {
 class playing;
@@ -22,6 +23,7 @@ public:
 private:
     Ui::playing *ui;
     Game *game;
+    QLabel** labels;
 };
 
 #endif // PLAYING_H

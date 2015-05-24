@@ -19,7 +19,8 @@ qt2048::~qt2048()
 
 void qt2048::on_start_clicked()
 {
+    playing *play=new (playing);
      play->show();
-    this->close();
+    //this->close();
 }
 

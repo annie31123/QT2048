@@ -16,15 +16,18 @@ SOURCES += main.cpp\
         qt2048.cpp \
     board.cpp \
     game.cpp \
-    playing.cpp
+    playing.cpp \
+    win.cpp
 
 HEADERS  += qt2048.h \
     board.h \
     game.h \
-    playing.h
+    playing.h \
+    win.h
 
 FORMS    += qt2048.ui \
-    playing.ui
+    playing.ui \
+    win.ui
 
 RESOURCES += \
     2048picture.qrc

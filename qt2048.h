@@ -25,7 +25,7 @@ private slots:
 
 private:
     Ui::qt2048 *ui;
-    playing *play=new (playing);
+
 
 };
 
