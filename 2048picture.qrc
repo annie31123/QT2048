@@ -2,5 +2,17 @@
     <qresource prefix="/new/prefix1">
         <file>2048title.PNG</file>
         <file>2048board.PNG</file>
+        <file>0.PNG</file>
+        <file>2.PNG</file>
+        <file>4.PNG</file>
+        <file>8.PNG</file>
+        <file>16.PNG</file>
+        <file>32.PNG</file>
+        <file>64.PNG</file>
+        <file>128.PNG</file>
+        <file>256.PNG</file>
+        <file>512.PNG</file>
+        <file>1024.PNG</file>
+        <file>2048.PNG</file>
     </qresource>
 </RCC>

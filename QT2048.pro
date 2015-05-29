@@ -14,13 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         qt2048.cpp \
-    board.cpp \
     game.cpp \
     playing.cpp \
     win.cpp
 
 HEADERS  += qt2048.h \
-    board.h \
     game.h \
     playing.h \
     win.h
@@ -31,3 +29,5 @@ FORMS    += qt2048.ui \
 
 RESOURCES += \
     2048picture.qrc
+
+DISTFILES +=

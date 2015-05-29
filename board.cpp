@@ -2,11 +2,20 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
+#include <QTime>
 using namespace std;
 
+ Board::Board(){
+
+     for(int i=0;i<4;i++)
+         for(int j=0;j<4;j++)
+             boardarray[i][j]=0;
 
 
-void Board::move(Direction direction){
+ }
+
+/*void Board::move(Direction direction){
 
   switch (direction){
 
@@ -28,7 +37,7 @@ void Board::move(Direction direction){
 }
 
 
-
+*/
 void Board::moveup(){
     for(int j=0;j<size;j++ ){
       for(int i=1;i<size;i++){
@@ -162,13 +171,12 @@ void Board::countscore(int getpoints){
 void Board::makerand2(){
 
   int count=0;
-  for(int i=0;i<size*size;i++)
+/*  for(int i=0;i<size*size;i++)
     randarray[size*size]=NULL;
-
+*/
   for(int i=0;i<size;i++){
     for(int j=0;j<size;j++){
       if (boardarray[i][j]==0){
-        randarray[count]=&boardarray[i][j];
         count++;
       } } }
 
@@ -177,12 +185,13 @@ void Board::makerand2(){
     return;
   }
 
-  srand(time(NULL));
+  qsrand(time(NULL));
 
-  int randposition=rand()%count;
-
-  *randarray[randposition]=2;
+  int randposition=qrand()%16;
+   if(boardarray[randposition/4][randposition%4]==0)
+     boardarray[randposition/4][randposition%4]=2;
   nospace=false;
+
 
 }
 

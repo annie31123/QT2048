@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <game.h>
-#include <board.h>
+//#include <board.h>
 #include "playing.h"
 
 namespace Ui {
@@ -25,6 +25,7 @@ private slots:
 
 private:
     Ui::qt2048 *ui;
+     playing play;
 
 
 };

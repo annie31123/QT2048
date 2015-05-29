@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    qt2048 w;
+    playing w;
     w.show();
 
     return a.exec();

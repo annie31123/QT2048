@@ -1,15 +1,15 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-enum Direction { UP, DOWN, LEFT, RIGHT };
+//enum Direction { UP, DOWN, LEFT, RIGHT };
 
 
 class Board{
 
 public:
-
+  Board();
   void boardmain();
-  void move(Direction direction);
+  //void move(Direction direction);
   void makerand2();
   int getsize();
   int getarrayvalue(int i,int j);
@@ -17,17 +17,17 @@ public:
   static const int size=4;
   int score;
   bool nospace;
+int boardarray[size][size];
 
-private:
 
   void countscore(int getpoints);
   void moveup();
   void movedown();
   void moveleft();
   void moveright();
+private:
 
-  int boardarray[size][size];
-  int *randarray[size*size];
+  //int *randarray[size*size];
 
 
 
